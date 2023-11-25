@@ -23,13 +23,13 @@ The `main` function serves as the entry point of the program. It guides users th
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/Book-Rating.git
+   git clone https://github.com/p0oria/book_rating.git
    ```
 
 2. **Navigate to the script directory:**
 
    ```bash
-   cd Book-Rating
+   cd book_rating
    ```
 
 3. **Run the script:**
