@@ -16,6 +16,8 @@ The `round_rating` function rounds a given rating to the nearest integer, taking
 
 The `main` function serves as the entry point of the program. It guides users through the process of rating different criteria based on the genre of the book (fiction or non-fiction). The criteria include aspects such as plot, characterization, writing style, accuracy, clarity, and more. The script then calculates and displays an overall rating, filtering out non-applicable (zero) ratings.
 
+**Note: This script assumes that the user inputs the correct information, and defensive coding has been kept minimal to maintain simplicity.**
+
 ## Usage
 
 1. **Clone the repository:**
@@ -94,6 +96,4 @@ The `main` function serves as the entry point of the program. It guides users th
 
 ## Output
 
-The script provides an overall rating for the book based on the entered criteria, considering only non-zero ratings. If no valid ratings are provided, a corresponding message is displayed.
-
-Feel free to use and modify this script to suit your book rating needs. Happy reading!
+The script provides an overall rating for the book based on the entered criteria. Feel free to use and modify this script to suit your book rating needs. Happy reading!
