@@ -1,20 +1,30 @@
+# Function to get a rating from the user within the specified range (0-5)
 def get_rating(category):
     while True:
+        
+        # Not all criteria are always applicable so users can opt out of them
+        # by entering 0
         rating = input(f"Rate {category} (0-5, enter 0 if not applicable): ")
         if rating.isdigit() and 0 <= int(rating) <= 5:
             return int(rating)
 
+# Function to round a rating to the nearest integer, considering decimal part
 def round_rating(rating):
     decimal_part = rating % 1
 
+    # If the decimal part is 0.5, ask the user for a more detailed impression
+    # to decide to round up or down
     if decimal_part == 0.5:
         impression = input("Was your overall impression more positive (p) "
                            "or negative (n)? ")
         return int(rating + 0.5) if impression.lower() == 'p' else int(rating)
     else:
         return int(rating + 0.5) if decimal_part >= 0.5 else int(rating)
-    
+
+# Main function to gather ratings based on user input    
 def main():
+    
+    # The rating criteria would be different for fiction and non-fiction
     genre = input("Enter 'f' for fiction or 'n' for non-fiction: ")
 
     if genre == 'f':
@@ -66,6 +76,7 @@ def main():
                                              "minimal bias, and balanced "
                                              "presentation.")
 
+    # Combine the ratings based on genre
     ratings = [plot, characterization, writing_style, themes_messages, 
                impact_enjoyment] if genre == 'f' else [accuracy_reliability,
                                                        clarity_accessibility, 
@@ -73,16 +84,16 @@ def main():
                                                        relevance_timeliness, 
                                                        author_perspective_bias]
 
+    # Filter out zero (non-applicable) ratings
     non_zero_ratings = [rating for rating in ratings if rating != 0]
 
     if non_zero_ratings:
+        # Calculate and display the overall rating
         average_rating = round_rating(sum(non_zero_ratings) 
                                       / len(non_zero_ratings))
         print(f"\nOverall rating: {average_rating}")
 
-    else:
-        print("\nNo valid ratings provided.")
-
+# Entry point of the program
 if __name__ == "__main__":
     main()
                                                                                 
